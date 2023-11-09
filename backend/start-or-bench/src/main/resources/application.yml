@@ -26,7 +26,13 @@ spring:
 debug: true
 logging:
   level:
+    com.samimu7.startorbench.service: INFO
     org:
       springframework:
         boot:
           autoconfigure: ERROR
+
+api:
+  football:
+    key: 'a11d3e2164msh38119711c7d9d7bp14eafbjsn6aab77f783a6'  # Replace with the actual API key
+    host: 'api-football-v1.p.rapidapi.com'

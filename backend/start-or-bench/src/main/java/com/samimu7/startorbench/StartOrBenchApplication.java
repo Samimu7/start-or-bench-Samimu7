@@ -9,5 +9,4 @@ public class StartOrBenchApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(StartOrBenchApplication.class, args);
 	}
-
 }
