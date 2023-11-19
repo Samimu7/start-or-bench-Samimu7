@@ -1,5 +1,6 @@
 [
   {
+    "fixtureId": 1,
     "teamOne": "Real Madrid",
     "teamTwo": "Barcelona",
     "date": "2023-12-03",
@@ -7,6 +8,7 @@
     "venue": "Santiago Bernabéu Stadium"
   },
   {
+    "fixtureId": 2,
     "teamOne": "Liverpool",
     "teamTwo": "Manchester United",
     "date": "2023-12-04",

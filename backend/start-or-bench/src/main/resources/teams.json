@@ -1,18 +1,66 @@
 [
   {
     "name": "Real Madrid",
-    "players": ["Thibaut Courtois", "Sergio Ramos", "Karim Benzema", "Luka Modric", "Toni Kroos"]
+    "players": [
+      {"name": "Thibaut Courtois", "position": "gk"},
+      {"name": "Sergio Ramos", "position": "cb"},
+      {"name": "Raphael Varane", "position": "cb"},
+      {"name": "Marcelo", "position": "lb"},
+      {"name": "Dani Carvajal", "position": "rb"},
+      {"name": "Luka Modric", "position": "mf"},
+      {"name": "Toni Kroos", "position": "mf"},
+      {"name": "Casemiro", "position": "mf"},
+      {"name": "Isco", "position": "mf"},
+      {"name": "Karim Benzema", "position": "str"},
+      {"name": "Eden Hazard", "position": "str"}
+    ]
   },
   {
     "name": "Barcelona",
-    "players": ["Marc-André ter Stegen", "Gerard Piqué", "Lionel Messi", "Antoine Griezmann", "Frenkie de Jong"]
+    "players": [
+      {"name": "Marc-André ter Stegen", "position": "gk"},
+      {"name": "Gerard Piqué", "position": "cb"},
+      {"name": "Clément Lenglet", "position": "cb"},
+      {"name": "Jordi Alba", "position": "lb"},
+      {"name": "Sergi Roberto", "position": "rb"},
+      {"name": "Sergio Busquets", "position": "mf"},
+      {"name": "Frenkie de Jong", "position": "mf"},
+      {"name": "Pedri", "position": "mf"},
+      {"name": "Ansu Fati", "position": "mf"},
+      {"name": "Lionel Messi", "position": "str"},
+      {"name": "Antoine Griezmann", "position": "str"}
+    ]
   },
   {
     "name": "Liverpool",
-    "players": ["Alisson Becker", "Virgil van Dijk", "Mohamed Salah", "Sadio Mané", "Roberto Firmino"]
+    "players": [
+      {"name": "Alisson Becker", "position": "gk"},
+      {"name": "Virgil van Dijk", "position": "cb"},
+      {"name": "Joe Gomez", "position": "cb"},
+      {"name": "Andrew Robertson", "position": "lb"},
+      {"name": "Trent Alexander-Arnold", "position": "rb"},
+      {"name": "Jordan Henderson", "position": "mf"},
+      {"name": "Thiago", "position": "mf"},
+      {"name": "Fabinho", "position": "mf"},
+      {"name": "Sadio Mané", "position": "mf"},
+      {"name": "Mohamed Salah", "position": "str"},
+      {"name": "Roberto Firmino", "position": "str"}
+    ]
   },
   {
     "name": "Manchester United",
-    "players": ["David de Gea", "Harry Maguire", "Bruno Fernandes", "Marcus Rashford", "Paul Pogba"]
+    "players": [
+      {"name": "David de Gea", "position": "gk"},
+      {"name": "Harry Maguire", "position": "cb"},
+      {"name": "Victor Lindelöf", "position": "cb"},
+      {"name": "Luke Shaw", "position": "lb"},
+      {"name": "Aaron Wan-Bissaka", "position": "rb"},
+      {"name": "Paul Pogba", "position": "mf"},
+      {"name": "Bruno Fernandes", "position": "mf"},
+      {"name": "Fred", "position": "mf"},
+      {"name": "Donny van de Beek", "position": "mf"},
+      {"name": "Marcus Rashford", "position": "str"},
+      {"name": "Mason Greenwood", "position": "str"}
+    ]
   }
 ]
