@@ -1,56 +1,30 @@
 package com.samimu7.startorbench.controller;
 
-import com.samimu7.startorbench.service.FootballDataService;
+import com.samimu7.startorbench.model.Match;
+import com.samimu7.startorbench.service.MatchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/matches")
 public class MatchController {
 
     @Autowired
-    private FootballDataService footballDataService;
+    private MatchService matchService;
 
-    @GetMapping("/champions-league")
-    public ResponseEntity<Object> getChampionsLeagueMatches(@RequestParam String date) {
-        footballDataService.fetchChampionsLeagueMatches(date);
-        return ResponseEntity.ok(footballDataService.getChampionsLeagueMatches());
+    @GetMapping
+    public ResponseEntity<List<Match>> getAllMatches() {
+        List<Match> matches = matchService.getAllMatches();
+        return ResponseEntity.ok(matches);
     }
 
-    @GetMapping("/champions-league/with-lineups")
-    public ResponseEntity<Object> getChampionsLeagueMatchesWithLineups(@RequestParam String date) {
-        footballDataService.fetchChampionsLeagueMatchesWithLineups(date);
-        return ResponseEntity.ok(footballDataService.getChampionsLeagueMatches());
-    }
-
-    @GetMapping("/champions-league/{fixtureId}/lineups")
-    public ResponseEntity<Object> getLineup(@PathVariable int fixtureId) {
-        return ResponseEntity.ok(footballDataService.getLineup(fixtureId));
-    }
-
-    @PutMapping("/champions-league/{fixtureId}/lineups/{playerId}")
-    public ResponseEntity<String> updatePlayerStatus(
-            @PathVariable int fixtureId,
-            @PathVariable int playerId,
-            @RequestParam boolean shouldStart
-    ) {
-        footballDataService.updatePlayerStatus(fixtureId, playerId, shouldStart);
-        return ResponseEntity.ok("Player status updated successfully.");
-    }
-
-    @GetMapping("/teams/{teamId}")
-    public ResponseEntity<Object> getTeamById(@PathVariable Long teamId) {
-        return ResponseEntity.ok(footballDataService.getTeamById(teamId));
-    }
-
-    @GetMapping("/players/{playerId}")
-    public ResponseEntity<Object> getPlayerById(@PathVariable Long playerId) {
-        return ResponseEntity.ok(footballDataService.getPlayerById(playerId));
-    }
-
-    @GetMapping("/lineups/{matchId}")
-    public ResponseEntity<Object> getLineupByMatchId(@PathVariable Long matchId) {
-        return ResponseEntity.ok(footballDataService.getLineupByMatchId(matchId));
+    @GetMapping("/{id}")
+    public ResponseEntity<Match> getMatchById(@PathVariable Long id) {
+        return matchService.getMatchById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 }

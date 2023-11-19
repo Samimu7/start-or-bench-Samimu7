@@ -1,0 +1,16 @@
+[
+  {
+    "teamOne": "Real Madrid",
+    "teamTwo": "Barcelona",
+    "date": "2023-12-03",
+    "time": "19:00",
+    "venue": "Santiago Bernabéu Stadium"
+  },
+  {
+    "teamOne": "Liverpool",
+    "teamTwo": "Manchester United",
+    "date": "2023-12-04",
+    "time": "16:00",
+    "venue": "Anfield"
+  }
+]

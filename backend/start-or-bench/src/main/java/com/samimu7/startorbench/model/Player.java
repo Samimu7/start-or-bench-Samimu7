@@ -1,42 +1,26 @@
 package com.samimu7.startorbench.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
+@Entity
 public class Player {
-    @JsonProperty("id")
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @JsonProperty("name")
     private String name;
+    private int benchedVotes;
 
-    @JsonProperty("shouldStart")
-    private boolean shouldStart;
-
-    // Other properties...
-
-    public int getId() {
-        return id;
+    public int getBenchedVotes() {
+        return benchedVotes;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setBenchedVotes(int benchedVotes) {
+        this.benchedVotes = benchedVotes;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public boolean isShouldStart() {
-        return shouldStart;
-    }
-
-    public void setShouldStart(boolean shouldStart) {
-        this.shouldStart = shouldStart;
-    }
-
-    // Other getters and setters...
 }
+
+

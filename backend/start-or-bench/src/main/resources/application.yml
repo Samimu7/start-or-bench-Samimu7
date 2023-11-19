@@ -1,38 +1,25 @@
-## DB config goes here
 spring:
-  batch:
-    jdbc:
-      initialize-schema: always
-  output:
-    ansi:
-      enabled: always
-  sql:
-    init:
-    mode: always
-
   datasource:
-      url: jdbc:postgresql://postgres:5432/forecastdb
-      username: forecast
-      password: secret
+    url: jdbc:postgresql://postgres:5432/forecastdb
+    username: forecast
+    password: secret
+    output:
+      ansi:
+        enabled: always
   jpa:
-    defer-datasource-initialization: true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: true
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-    #    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  sql:
+    init:
+      mode: always
 
-    ## Logging settings
-debug: true
 logging:
   level:
-    com.samimu7.startorbench.service: INFO
-    org:
-      springframework:
-        boot:
-          autoconfigure: ERROR
+    root: INFO
+    com.samimu7.startorbench: DEBUG
 
-api:
-  football:
-    key: 'a11d3e2164msh38119711c7d9d7bp14eafbjsn6aab77f783a6'  # Replace with the actual API key
-    host: 'api-football-v1.p.rapidapi.com'
+debug: true
+
+
