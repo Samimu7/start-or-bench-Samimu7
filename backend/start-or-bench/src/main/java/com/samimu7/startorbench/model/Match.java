@@ -10,7 +10,7 @@ public class Match {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int fixtureId; // New field
+    private int fixtureId;
     private String teamOne;
     private String teamTwo;
     private LocalDate date;
@@ -18,20 +18,13 @@ public class Match {
     private String venue;
 
     // Constructors, getters, and setters
-    public int getFixtureId() {
-        return fixtureId;
-    }
-
-    public void setFixtureId(int fixtureId) {
-        this.fixtureId = fixtureId;
-    }
-
-
     public Match() {}
 
-
+    // Getters and setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
+    public int getFixtureId() { return fixtureId; }
+    public void setFixtureId(int fixtureId) { this.fixtureId = fixtureId; }
     public String getTeamOne() { return teamOne; }
     public void setTeamOne(String teamOne) { this.teamOne = teamOne; }
     public String getTeamTwo() { return teamTwo; }

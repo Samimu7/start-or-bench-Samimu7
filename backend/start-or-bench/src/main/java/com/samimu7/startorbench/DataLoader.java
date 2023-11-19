@@ -6,7 +6,6 @@ import com.samimu7.startorbench.model.Match;
 import com.samimu7.startorbench.model.Player;
 import com.samimu7.startorbench.model.Team;
 import com.samimu7.startorbench.repository.MatchRepository;
-import com.samimu7.startorbench.repository.PlayerRepository;
 import com.samimu7.startorbench.repository.TeamRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -26,9 +25,6 @@ public class DataLoader implements CommandLineRunner {
 
     @Autowired
     private TeamRepository teamRepository;
-
-    @Autowired
-    private PlayerRepository playerRepository;
 
     @Autowired
     private MatchRepository matchRepository;
@@ -51,5 +47,4 @@ public class DataLoader implements CommandLineRunner {
             teamRepository.save(team);
         });
     }
-
 }
