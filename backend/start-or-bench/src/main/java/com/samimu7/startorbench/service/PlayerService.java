@@ -2,6 +2,7 @@ package com.samimu7.startorbench.service;
 
 import com.samimu7.startorbench.model.Player;
 import com.samimu7.startorbench.repository.PlayerRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,15 +18,14 @@ public class PlayerService {
         return playerRepository.findById(id);
     }
 
+
+
     public Player votePlayerBenched(Long playerId) {
-        Optional<Player> playerOptional = playerRepository.findById(playerId);
-        if (playerOptional.isPresent()) {
-            Player player = playerOptional.get();
+        return playerRepository.findById(playerId).map(player -> {
             player.setBenchedVotes(player.getBenchedVotes() + 1);
             return playerRepository.save(player);
-        } else {
-            throw new RuntimeException("Player not found with id: " + playerId);
-        }
+        }).orElseThrow(() -> new EntityNotFoundException("Player not found with id: " + playerId));
     }
+
 }
 

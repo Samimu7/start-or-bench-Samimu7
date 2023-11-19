@@ -27,4 +27,12 @@ public class MatchController {
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
+
+    @GetMapping("/fixture/{fixtureId}")
+    public ResponseEntity<Match> getMatchByFixtureId(@PathVariable int fixtureId) {
+        return matchService.getMatchByFixtureId(fixtureId)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
 }

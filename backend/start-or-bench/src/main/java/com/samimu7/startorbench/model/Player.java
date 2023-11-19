@@ -19,8 +19,9 @@ public class Player {
     // Constructors
     public Player() {}
 
-    public Player(String name, Team team) {
+    public Player(String name, String position, Team team) {
         this.name = name;
+        this.position = position;
         this.team = team;
     }
 

@@ -35,10 +35,13 @@ public class DataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        // Load teams
+        // Load matches
         InputStream matchesStream = new ClassPathResource("matches.json").getInputStream();
         List<Match> matches = objectMapper.readValue(matchesStream, new TypeReference<List<Match>>() {});
         matchRepository.saveAll(matches);
+
+        // Load teams
+        InputStream teamsStream = new ClassPathResource("teams.json").getInputStream();
         List<Team> teams = objectMapper.readValue(teamsStream, new TypeReference<List<Team>>() {});
         teams.forEach(team -> {
             Set<Player> players = team.getPlayers().stream()
@@ -46,10 +49,7 @@ public class DataLoader implements CommandLineRunner {
                     .collect(Collectors.toSet());
             team.setPlayers(players);
             teamRepository.save(team);
-
-        // Load matches
-        InputStream matchesStream = new ClassPathResource("matches.json").getInputStream();
-        List<Match> matches = objectMapper.readValue(matchesStream, new TypeReference<List<Match>>() {});
-        matchRepository.saveAll(matches);
+        });
     }
+
 }

@@ -21,6 +21,9 @@ public class MatchService {
     public Optional<Match> getMatchById(Long id) {
         return matchRepository.findById(id);
     }
+    public Optional<Match> getMatchByFixtureId(int fixtureId) {
+        return matchRepository.findByFixtureId(fixtureId);
+    }
 }
 
 
