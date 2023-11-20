@@ -6,19 +6,16 @@ function App() {
   const [fixtures, setFixtures] = useState<Fixture[]>([]);
   const [selectedFixture, setSelectedFixture] = useState<Fixture | null>(null);
   const [lineup, setLineup] = useState<Lineup | null>(null);
-  const [darkMode, setDarkMode] = useState<boolean>(true); // Default to dark mode
+  const [darkMode, setDarkMode] = useState<boolean>(true);
 
-  // Toggle dark mode
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
 
-  // Load fixtures when the component mounts
   useEffect(() => {
     getFixtures().then((data) => setFixtures(data));
   }, []);
 
-  // Load lineup when a fixture is selected
   useEffect(() => {
     if (selectedFixture) {
       getLineup(selectedFixture.fixtureId).then((data) => setLineup(data));
@@ -30,9 +27,7 @@ function App() {
   };
 
   const handlePlayerVote = (player: Player) => {
-    // You can implement the logic for voting here
     console.log(`Voted to bench player: ${player.name}`);
-    // Increment the votesToBench counter for the player
     player.votesToBench = (player.votesToBench || 0) + 1;
     setLineup((prevLineup) => {
       if (!prevLineup) return null;

@@ -1,27 +1,38 @@
-/* Reset some default styles */
 body, h1, h2, ul {
   margin: 0;
   padding: 0;
+  margin-bottom: 5px;
 }
 
 body {
-  font-family: 'Roboto', Arial, sans-serif; /* Recommended font family */
-  background-color: #111; /* Dark background color */
+  font-family: 'Montserrat', sans-serif;
+  background-color: #111;
   padding: 20px;
-  color: #fff; /* Default text color in dark mode */
+  color: #fff;
+  overflow-x: hidden;
 }
 
 .App {
-  max-width: 800px;
+  max-width: 90vw;
   margin: 0 auto;
-  background-color: #333; /* Dark background color for the app */
+  background-color: #333;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-  color: #fff; /* Default text color in dark mode */
+  color: #fff;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-/* Button styles */
+h1 {
+  font-size: 2.32em;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: clip;
+  margin-bottom: 5px;
+}
+
 button {
   border: none;
   border-radius: 4px;
@@ -38,15 +49,15 @@ button:hover {
   background-color: #535bf2;
 }
 
-/* Fixture list styles */
 .fixture-list ul {
   list-style: none;
-  padding: 0;
+  padding: 5;
+  margin-bottom: 5px;
 }
 
 .fixture-item {
   padding: 10px;
-  background-color: #1a1a1a; /* Dark background color for fixture items */
+  background-color: #1a1a1a;
   margin-bottom: 10px;
   border-radius: 4px;
   cursor: pointer;
@@ -57,13 +68,12 @@ button:hover {
 }
 
 .fixture-item:hover {
-  background-color: #111; /* Darker background color on hover */
+  background-color: #111;
 }
 
-/* Lineup styles */
 .lineup h2 {
   margin-top: 20px;
-  font-size: 18px;
+  font-size: 24px;
 }
 
 .player-item {
@@ -71,14 +81,14 @@ button:hover {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background-color: #1a1a1a; /* Dark background color for player items */
+  background-color: #1a1a1a;
   margin-bottom: 10px;
   border-radius: 4px;
   transition: background-color 0.3s;
 }
 
 .player-item:hover {
-  background-color: #111; /* Darker background color on hover */
+  background-color: #111;
 }
 
 .player-name {
@@ -109,7 +119,6 @@ button:hover {
   font-size: 12px;
 }
 
-/* Mobile-first design */
 @media (max-width: 768px) {
   .App {
     padding: 10px;
