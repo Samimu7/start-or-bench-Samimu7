@@ -1,42 +1,123 @@
-#root {
-  max-width: 1280px;
+/* Reset some default styles */
+body, h1, h2, ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif; /* Recommended font family */
+  background-color: #111; /* Dark background color */
+  padding: 20px;
+  color: #fff; /* Default text color in dark mode */
+}
+
+.App {
+  max-width: 800px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  background-color: #333; /* Dark background color for the app */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  color: #fff; /* Default text color in dark mode */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Button styles */
+button {
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #646cff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+button:hover {
+  background-color: #535bf2;
+}
+
+/* Fixture list styles */
+.fixture-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.fixture-item {
+  padding: 10px;
+  background-color: #1a1a1a; /* Dark background color for fixture items */
+  margin-bottom: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.fixture-item:hover {
+  background-color: #111; /* Darker background color on hover */
+}
+
+/* Lineup styles */
+.lineup h2 {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.player-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #1a1a1a; /* Dark background color for player items */
+  margin-bottom: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.player-item:hover {
+  background-color: #111; /* Darker background color on hover */
+}
+
+.player-name {
+  flex-grow: 1;
+  margin-right: 10px;
+  font-weight: 500;
+}
+
+.vote-button {
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: #646cff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.vote-button:hover {
+  background-color: #535bf2;
+}
+
+.votes {
+  font-size: 12px;
+}
+
+/* Mobile-first design */
+@media (max-width: 768px) {
+  .App {
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .fixture-item,
+  .player-item {
+    font-size: 14px;
+    padding: 8px;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
