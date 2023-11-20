@@ -6,11 +6,6 @@ function App() {
   const [fixtures, setFixtures] = useState<Fixture[]>([]);
   const [selectedFixture, setSelectedFixture] = useState<Fixture | null>(null);
   const [lineup, setLineup] = useState<Lineup | null>(null);
-  const [darkMode, setDarkMode] = useState<boolean>(true);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
 
   useEffect(() => {
     getFixtures().then((data) => setFixtures(data));
@@ -41,8 +36,10 @@ function App() {
   };
 
   return (
-    <div className={`App ${darkMode ? "dark-mode" : ""}`}>
-      <h1>ShouldBeBenched</h1>
+    <div className="App">
+      <header className="App-header">
+        <h1>ShouldBeBenched</h1>
+      </header>
       <div className="fixture-list">
         <h2>Fixtures</h2>
         <ul>
@@ -57,30 +54,34 @@ function App() {
         {selectedFixture && (
           <>
             <h2>Lineup</h2>
-            <h3>{selectedFixture.teamOne}</h3>
-            <ul>
-              {lineup?.teamOne.map((player) => (
-                <li key={player.playerId} className="player-item">
-                  <span className="player-name">{player.name}</span>
-                  <button className="vote-button" onClick={() => handlePlayerVote(player)}>
-                    Should be benched
-                  </button>
-                  <span className="votes">{player.votesToBench || 0} votes</span>
-                </li>
-              ))}
-            </ul>
-            <h3>{selectedFixture.teamTwo}</h3>
-            <ul>
-              {lineup?.teamTwo.map((player) => (
-                <li key={player.playerId} className="player-item">
-                  <span className="player-name">{player.name}</span>
-                  <button className="vote-button" onClick={() => handlePlayerVote(player)}>
-                    Should be benched
-                  </button>
-                  <span className="votes">{player.votesToBench || 0} votes</span>
-                </li>
-              ))}
-            </ul>
+            <div className="team">
+              <h3>{selectedFixture.teamOne}</h3>
+              <ul>
+                {lineup?.teamOne.map((player) => (
+                  <li key={player.playerId} className="player-item">
+                    <span className="player-name">{player.name}</span>
+                    <button className="vote-button" onClick={() => handlePlayerVote(player)}>
+                      Should be benched
+                    </button>
+                    <span className="votes">{player.votesToBench || 0} votes</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="team">
+              <h3>{selectedFixture.teamTwo}</h3>
+              <ul>
+                {lineup?.teamTwo.map((player) => (
+                  <li key={player.playerId} className="player-item">
+                    <span className="player-name">{player.name}</span>
+                    <button className="vote-button" onClick={() => handlePlayerVote(player)}>
+                      Should be benched
+                    </button>
+                    <span className="votes">{player.votesToBench || 0} votes</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </>
         )}
       </div>
