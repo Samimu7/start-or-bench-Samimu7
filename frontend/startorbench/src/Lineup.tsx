@@ -1,4 +1,3 @@
-// src/Lineup.tsx
 import React from "react";
 import { Lineup } from "./api";
 
@@ -12,7 +11,7 @@ function LineupComponent({ lineup, selectedFixture }: LineupProps) {
   const teamTwo = lineup.teamTwo || [];
 
   const handleVote = (playerId: number) => {
-    // Implement your voting logic here
+    
     alert(`Player with ID ${playerId} voted to be benched.`);
   };
 

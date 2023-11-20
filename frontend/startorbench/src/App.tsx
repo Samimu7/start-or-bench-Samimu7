@@ -59,7 +59,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>ShouldBeBenched</h1>
+        <h1>Should Be Benched!</h1>
       </header>
       <FixtureList fixtures={fixtures} onFixtureClick={handleFixtureClick} />
       <LineupComponent

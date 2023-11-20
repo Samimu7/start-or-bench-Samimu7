@@ -1,3 +1,4 @@
+/* General Styles */
 body, h1, h2, ul {
   margin: 0;
   padding: 0;
@@ -5,17 +6,17 @@ body, h1, h2, ul {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #111;
+  font-family: 'Roboto', sans-serif; /* Updated font */
+  background-color: #111; /* Dark background */
   padding: 20px;
-  color: #fff;
+  color: #fff; /* White text */
   overflow-x: hidden;
 }
 
 .App {
   max-width: 90vw;
   margin: 0 auto;
-  background-color: #333;
+  background-color: #333; /* Darker panel color */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
@@ -26,38 +27,46 @@ body {
 
 h1 {
   font-size: 2.32em;
-  max-width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: clip;
-  margin-bottom: 5px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
+/* Buttons and Interactive Elements */
 button {
   border: none;
   border-radius: 4px;
   padding: 10px 20px;
   font-size: 14px;
   font-weight: 500;
-  background-color: #646cff;
+  background-color: #d35400; /* Dark reddish-orange */
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-left: 10px; /* Added margin for separation */
 }
 
 button:hover {
-  background-color: #535bf2;
+  background-color: #b94600; /* Slightly darker on hover */
 }
-
+.App-header {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  color: #d35400; /* Dark reddish-orange color for the logo text */
+  text-align: center;
+  font-weight: 70; /* Bold font weight */
+  margin: 20px 0; /* Margin for spacing */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); 
+}
+/* Fixture List Styles */
 .fixture-list ul {
   list-style: none;
-  padding: 5;
-  margin-bottom: 5px;
+  padding: 0;
 }
 
 .fixture-item {
   padding: 10px;
-  background-color: #1a1a1a;
+  background-color: #1a1a1a; /* Slightly lighter than body for contrast */
   margin-bottom: 10px;
   border-radius: 4px;
   cursor: pointer;
@@ -68,12 +77,14 @@ button:hover {
 }
 
 .fixture-item:hover {
-  background-color: #111;
+  background-color: #111; /* Darker on hover */
 }
 
+/* Lineup Styles */
 .lineup h2 {
   margin-top: 20px;
   font-size: 24px;
+  color: #fff;
 }
 
 .player-item {
@@ -84,7 +95,6 @@ button:hover {
   background-color: #1a1a1a;
   margin-bottom: 10px;
   border-radius: 4px;
-  transition: background-color 0.3s;
 }
 
 .player-item:hover {
@@ -103,7 +113,7 @@ button:hover {
   padding: 5px 10px;
   font-size: 12px;
   font-weight: 500;
-  background-color: #646cff;
+  background-color: #d35400;
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -112,13 +122,14 @@ button:hover {
 }
 
 .vote-button:hover {
-  background-color: #535bf2;
+  background-color: #b94600;
 }
 
 .votes {
   font-size: 12px;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
   .App {
     padding: 10px;

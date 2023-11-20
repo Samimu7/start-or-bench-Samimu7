@@ -1,23 +1,19 @@
-// src/FixtureList.tsx
 import React from "react";
 import { Fixture } from "./api";
 
 interface FixtureListProps {
   fixtures: Fixture[];
-  onSelect: (fixtureId: number) => void;
+  onFixtureClick: (fixture: Fixture) => void;
 }
 
-function FixtureList({ fixtures, onSelect }: FixtureListProps) {
+function FixtureList({ fixtures, onFixtureClick }: FixtureListProps) {
   return (
-    <div>
+    <div className="fixture-list">
       <h2>Fixtures</h2>
       <ul>
         {fixtures.map((fixture) => (
-          <li key={fixture.id}>
-            <button onClick={() => onSelect(fixture.fixtureId)} className="fixture-button">
-              <img src="url_to_team_logo" alt="Team Logo" className="team-logo" />
-              {fixture.teamOne} vs {fixture.teamTwo}
-            </button>
+          <li key={fixture.id} onClick={() => onFixtureClick(fixture)} className="fixture-item">
+            {fixture.teamOne} vs {fixture.teamTwo}
           </li>
         ))}
       </ul>
